@@ -28,7 +28,7 @@ const Hero = () => (
       }
       socialButtons={
         <>
-          <a href="/">
+          <a href="/https://www.instagram.com/akhilvarrier/">
             <HeroSocial
               src="/assets/images/twitter-icon.png"
               alt="Twitter icon"
