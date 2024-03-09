@@ -34,22 +34,16 @@ const Hero = () => (
               alt="Twitter icon"
             />
           </a>
-          <a href="/">
+          <a href="https://www.facebook.com/profile.php?id=100010639773048">
             <HeroSocial
               src="/assets/images/facebook-icon.png"
               alt="Facebook icon"
             />
           </a>
-          <a href="/">
+          <a href="https://www.linkedin.com/in/akhil-g-varrier-483b28216/">
             <HeroSocial
               src="/assets/images/linkedin-icon.png"
               alt="Linkedin icon"
-            />
-          </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/youtube-icon.png"
-              alt="Youtube icon"
             />
           </a>
         </>
