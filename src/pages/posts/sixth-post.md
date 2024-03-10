@@ -52,3 +52,15 @@ Now we need to find what that string means so we navigate to string.xml and see 
 
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/663bea44-19bc-4ad1-b46d-85f32c1dc2e7)
 
+## Flag four
+
+And after base64 decoding I got the flag as: 4_overdone_omelets
+
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/425cd5e6-df3d-4361-beb7-e3dcbde7cea1)
+
+## Flag five
+
+1st we open the chall on phone…and it shows a weird error
+Then I just tried to open it again and it said the msg “keep trying”
+Now I just listened to them and tried again to open the app and it gave me the flag as: {F1v3}
+
