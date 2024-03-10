@@ -30,6 +30,7 @@ const Hero = () => (
         <>
           <a href="https://www.instagram.com/akhilvarrier/">
             <HeroSocial
+              className="h-8 w-8"
               src="/assets/images/instagram.png"
               alt="Twitter icon"
             />
