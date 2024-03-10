@@ -30,7 +30,7 @@ const Hero = () => (
         <>
           <a href="https://www.instagram.com/akhilvarrier/">
             <HeroSocial
-              src="/assets/images/twitter-icon.png"
+              src="/assets/images/insta logo.png"
               alt="Twitter icon"
             />
           </a>
