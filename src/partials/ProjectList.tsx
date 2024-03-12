@@ -18,7 +18,7 @@ const ProjectList = () => (
       <Project
         name="Project 1"
         description="Side-channel analysis, finding out AES encryption keys using power analysis."
-        link="/projects/side channel.md"
+        link="/pages/projects/side channel.md"
         img={{
           src: '/assets/images/project-web-design.png',
           alt: 'Project Web Design',
