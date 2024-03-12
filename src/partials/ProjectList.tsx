@@ -25,10 +25,10 @@ const ProjectList = () => (
         }}
         category={
           <>
-            <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
-            <Tags color={ColorTags.LIME}>Web design</Tags>
-            <Tags color={ColorTags.SKY}>Tailwind.css</Tags>
-            <Tags color={ColorTags.ROSE}>TypeScript</Tags>
+            <Tags color={ColorTags.FUCHSIA}>Hardware security</Tags>
+            <Tags color={ColorTags.LIME}>Side channel</Tags>
+            <Tags color={ColorTags.SKY}>AES</Tags>
+            <Tags color={ColorTags.ROSE}>Power analysis</Tags>
           </>
         }
       />
@@ -39,9 +39,8 @@ const ProjectList = () => (
         img={{ src: '/assets/images/project-fire.png', alt: 'Project Fire' }}
         category={
           <>
-            <Tags color={ColorTags.VIOLET}>Next.js</Tags>
-            <Tags color={ColorTags.EMERALD}>Blog</Tags>
-            <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
+            <Tags color={ColorTags.VIOLET}>Android</Tags>
+            <Tags color={ColorTags.EMERALD}>WebView</Tags>
           </>
         }
       />
@@ -52,9 +51,8 @@ const ProjectList = () => (
         img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
         category={
           <>
-            <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
-            <Tags color={ColorTags.INDIGO}>Bootstrap</Tags>
-            <Tags color={ColorTags.ROSE}>TypeScript</Tags>
+            <Tags color={ColorTags.FUCHSIA}>Machine learning</Tags>
+            <Tags color={ColorTags.INDIGO}>CNN</Tags>
           </>
         }
       />
