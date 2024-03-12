@@ -1,4 +1,4 @@
-import {
+/*import {
   ColorTags,
   GradientText,
   Project,
@@ -69,3 +69,4 @@ const ProjectList = () => (
 );
 
 export { ProjectList };
+*/
