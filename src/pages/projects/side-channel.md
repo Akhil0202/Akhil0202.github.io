@@ -3,9 +3,18 @@ layout: '@/templates/BasePost.astro'
 title: Injured Android Walkthrough
 description: This blog contains solution for some of the challenges which I solved from injured android.
 pubDate: 2024-02-06T00:00:00Z
-imgSrc: '/assets/images/InjuredAndroid.png'
+imgSrc: '/assets/images/sidechannel.png'
 imgAlt: 'InjuredAndroid'
 ---
 
-Welcome to my walkthrough for Injured android. Here I have tried to explain you guys on how to solve challenges from injured android apk so let's get started.<br>
-PS: I am new to writing walkthrough so forgive me if the explanations are not detailed enough
+# Side channel attacks
+
+In this project I had used side channel attacks to guess the secret key which is used in AES
+
+I had mainly focused on 3 types:
+1) Simple Power Analysis
+2) Differential Power Analysis
+3) Correlation Power Analysis
+
+## Simple Power Analysis
+
