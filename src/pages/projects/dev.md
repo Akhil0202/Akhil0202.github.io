@@ -1,10 +1,12 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: Side Channel Attacks
-description: Here I have explained about the project on the topic of side channel attacks on hardware devices.
+description: Developed couple of simple android applications.
 pubDate: 2023-10-09T00:00:00Z
-imgSrc: '/assets/images/sidechannel.png'
+imgSrc: '/assets/images/android.png'
 imgAlt: 'InjuredAndroid'
 ---
 
-# Side channel attacks
+# Browser app
+
+# Random number generator
