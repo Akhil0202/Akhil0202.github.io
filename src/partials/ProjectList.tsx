@@ -19,6 +19,8 @@ const ProjectList = () => (
         name="Hardware security project"
         description="Side-channel analysis, finding out AES encryption keys using power analysis."
         link="/projects/side-channel"
+        img={{
+        }}
         category={
           <>
             <Tags color={ColorTags.FUCHSIA}>Hardware security</Tags>
@@ -30,8 +32,10 @@ const ProjectList = () => (
       />
       <Project
         name="Android project"
-        description="Development of couple of simple android application."
+        description="Developed a couple of simple android applications."
         link="/"
+        img={{
+        }}
         category={
           <>
             <Tags color={ColorTags.VIOLET}>Android</Tags>
@@ -43,6 +47,8 @@ const ProjectList = () => (
         name="Machine Learning project"
         description="Pneumonia detection using machine learning."
         link="/"
+        img={{
+        }}
         category={
           <>
             <Tags color={ColorTags.FUCHSIA}>Machine learning</Tags>
