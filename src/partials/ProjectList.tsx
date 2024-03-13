@@ -16,13 +16,9 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
-        name="Project 1"
+        name="Hardware security project"
         description="Side-channel analysis, finding out AES encryption keys using power analysis."
         link="/projects/side-channel"
-        img={{
-          src: '/assets/images/project-web-design.png',
-          alt: 'Project Web Design',
-        }}
         category={
           <>
             <Tags color={ColorTags.FUCHSIA}>Hardware security</Tags>
@@ -33,10 +29,9 @@ const ProjectList = () => (
         }
       />
       <Project
-        name="Project 2"
+        name="Android project"
         description="Development of couple of simple android application."
         link="/"
-        img={{ src: '/assets/images/project-fire.png', alt: 'Project Fire' }}
         category={
           <>
             <Tags color={ColorTags.VIOLET}>Android</Tags>
@@ -45,10 +40,9 @@ const ProjectList = () => (
         }
       />
       <Project
-        name="Project 3"
+        name="Machine Learning project"
         description="Pneumonia detection using machine learning."
         link="/"
-        img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
         category={
           <>
             <Tags color={ColorTags.FUCHSIA}>Machine learning</Tags>
