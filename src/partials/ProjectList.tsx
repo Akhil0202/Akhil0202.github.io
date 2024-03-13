@@ -35,7 +35,7 @@ const ProjectList = () => (
       <Project
         name="Android project"
         description="Developed a couple of simple Android applications."
-        link="/"
+        link="/projects/dev"
         img={{
           src: '/assets/images/android.png',
           alt: 'Project Web Design',
@@ -50,7 +50,7 @@ const ProjectList = () => (
       <Project
         name="Machine Learning project"
         description="Pneumonia detection using machine learning."
-        link="/"
+        link="/projects/ml"
         img={{
           src: '/assets/images/ml.png',
           alt: 'Project Web Design',
