@@ -20,6 +20,8 @@ const ProjectList = () => (
         description="Side-channel analysis, finding out AES encryption keys using power analysis."
         link="/projects/side-channel"
         img={{
+          src: '/assets/images/sidechannel.png',
+          alt: 'Project Web Design',
         }}
         category={
           <>
@@ -32,9 +34,11 @@ const ProjectList = () => (
       />
       <Project
         name="Android project"
-        description="Developed a couple of simple android applications."
+        description="Developed a couple of simple Android applications."
         link="/"
         img={{
+          src: '/assets/images/android.png',
+          alt: 'Project Web Design',
         }}
         category={
           <>
@@ -48,6 +52,8 @@ const ProjectList = () => (
         description="Pneumonia detection using machine learning."
         link="/"
         img={{
+          src: '/assets/images/ml.png',
+          alt: 'Project Web Design',
         }}
         category={
           <>
