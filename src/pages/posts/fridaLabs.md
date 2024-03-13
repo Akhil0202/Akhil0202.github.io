@@ -7,5 +7,5 @@ imgSrc: '/assets/images/frida.png'
 imgAlt: 'InjuredAndroid'
 ---
 
-Welcome to my walkthrough for Injured android. Here I have tried to explain you guys on how to solve challenges from injured android apk so let's get started.<br>
-PS: I am new to writing walkthrough so forgive me if the explanations are not detailed enough
+Welcome to my walkthrough for frida labs. Here I have tried to explain you guys on how to solve challenges from frida labs apk so let's get started.<br>
+PS: I am new to writing walkthroughs so forgive me if the explanations are not detailed enough
