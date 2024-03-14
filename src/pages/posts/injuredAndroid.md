@@ -94,3 +94,36 @@ function intercept() {
 intercept()
 ```
 So basically in this code we call a method named "a" which does DES encryption. So we write a Frida script to call that method and give the input as k3FElEG9lnoWbOateGhj5pX6QsXRNJKh///8Jxi8KXW7iDpk2xRxhQ==. Now we send dummy data in the activity. So the data(k3FElEG9lnoWbOateGhj5pX6QsXRNJKh///8Jxi8KXW7iDpk2xRxhQ==) gets decrypted and gives us the flag in the Frida server, {This_Isn't_Where_I_Parked_My_Car}. Now we just need to type this onto our activity which gives us the message that we solved the challenge.
+
+## Flag seven
+
+Now this challenge is based on Sqlite3 database concept. Now after navigating to FlagSevenLoginActivity in jadx we can see this:
+
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/1977dee4-daec-4a2d-afd7-479d106956b9)
+
+The hint given by them is "stay on this activity" and from the above image we can see that the DB is created onCreate. So we need to be in this activity to access the DB. 
+Now we open cmd prompt
+```
+adb root
+adb shell
+cd /data/data/b3nac.injuredandroid
+ls
+```
+Now here we can see 2 output
+
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/2ef898ef-9a29-4e23-98a6-ef661fb67777)
+
+Now we run 
+```
+sqlite3 Thisisatest.db
+.tables
+select * from Thisisatest;
+```
+
+Now our output is:
+
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/662b7cf7-b15b-4112-a2fc-a69d18190a23)
+
+One is a hash and when we decrypt the hash we get: ```hunter2```
+After decrypting the password using rot47 we get the URL where flag is stored: ```https://injuredandroid.firebaseio.com/sqlite.json```
+Now visiting the URL we get the flag: "S3V3N_11"
