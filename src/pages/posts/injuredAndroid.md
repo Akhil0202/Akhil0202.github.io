@@ -13,7 +13,6 @@ PS: I am new to writing walkthrough so forgive me if the explanations are not de
 ## Flag one-login
 
 1st we navigate to androidmanifest.xml file where we find this activity:
-
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/0c170ad8-968b-4e79-af80-188535c5762d)
 
 Now we can decompile the entire program and search for this particular activity
@@ -127,3 +126,8 @@ Now our output is:
 One is a hash and when we decrypt the hash we get: ```hunter2```
 After decrypting the password using rot47 we get the URL where flag is stored: ```https://injuredandroid.firebaseio.com/sqlite.json```
 Now visiting the URL we get the flag: "S3V3N_11"
+
+## Flag eight
+
+This challenge was about AWS misconfiguration.
+They have mentioned about the API key which is stored in strings.xml. It can be used by the public
