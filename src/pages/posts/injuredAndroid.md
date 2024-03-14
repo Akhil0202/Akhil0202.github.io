@@ -76,20 +76,20 @@ So now we need to setup Frida server and write Frida script.
 This is the Frida script which I have used:
 ```javascript
 function intercept() {
- // Check if frida has located the JNI
-  if (Java.available) {
- // Switch to the Java context
-    Java.perform(function() {
-    const mydecrypt = Java.use('b3nac.injuredandroid.VGV4dEVuY3J5cHRpb25Ud28');
-    mydecrypt.decrypt.overload('java.lang.String').implementation = function (data) {
-      console.log('[+] decrypting data ' + data );
-      var flag = this.decrypt(data);
-      console.log('[+] decrypted data (flag) ' + flag);
-      return flag;
-    }
-    console.log('[+] VGV4dEVuY3J5cHRpb25Ud28.decrypt hooked - check a flag')
-  }
-  )}
+// Check if frida has located the JNI
+    if (Java.available) {
+    //Switch to the Java context
+        Java.perform(function() {
+            const mydecrypt = Java.use('b3nac.injuredandroid.VGV4dEVuY3J5cHRpb25Ud28');
+            mydecrypt.decrypt.overload('java.lang.String').implementation = function (data) {
+                console.log('[+] decrypting data ' + data );
+                var flag = this.decrypt(data);
+                console.log('[+] decrypted data (flag) ' + flag);
+                return flag;
+            }   
+            console.log('[+] VGV4dEVuY3J5cHRpb25Ud28.decrypt hooked - check a flag')
+        }
+    )}
 }
 intercept()
 ```
