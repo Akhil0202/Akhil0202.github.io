@@ -80,16 +80,17 @@ function intercept() {
     if (Java.available) {
     //Switch to the Java context
         Java.perform(function() {
-            const mydecrypt = Java.use('b3nac.injuredandroid.VGV4dEVuY3J5cHRpb25Ud28');
-            mydecrypt.decrypt.overload('java.lang.String').implementation = function (data) {
-                console.log('[+] decrypting data ' + data );
-                var flag = this.decrypt(data);
-                console.log('[+] decrypted data (flag) ' + flag);
+            const decrypt = Java.use('b3nac.injuredandroid.k');
+            decrypt.a.overload('java.lang.String').implementation = function (send) {
+                console.log('decrypting data' + send );
+                var flag = this.a(send);
+                console.log('decrypted data (flag) ' + flag);
                 return flag;
             }   
-            console.log('[+] VGV4dEVuY3J5cHRpb25Ud28.decrypt hooked - check a flag')
+            console.log('decrypt hooked - check a flag')
         }
     )}
 }
 intercept()
 ```
+So basically in this code we call a method named "a" which does DES encryption. So we write a Frida script to call that method and give the input as k3FElEG9lnoWbOateGhj5pX6QsXRNJKh///8Jxi8KXW7iDpk2xRxhQ==. Now we send dummy data in the activity. So the data(k3FElEG9lnoWbOateGhj5pX6QsXRNJKh///8Jxi8KXW7iDpk2xRxhQ==) gets decrypted and gives us the flag in the Frida server, {This_Isn't_Where_I_Parked_My_Car}. Now we just need to type this onto our activity which gives us the message that we solved the challenge.
