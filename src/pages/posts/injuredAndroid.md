@@ -25,7 +25,7 @@ Here in the source itself we can find the flag for the challenge
 
 ## Flag two
 
-When we open the 2nd chall they give a hint saying “exported activities can be accessed using ADB.
+When we open the 2nd chall they gave a hint saying “exported activities can be accessed using ADB.
 
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/29b5b07b-6393-40a0-8e4b-a2327e7f9415)
 
@@ -64,3 +64,32 @@ And after base64 decoding I got the flag as: 4_overdone_omelets
 Then I just tried to open it again and it said the msg “keep trying”
 Now I just listened to them and tried again to open the app and it gave me the flag as: {F1v3}
 
+## Flag six
+
+We navigate to the FlagSixLoginActivity class which is present in b3nac.injuredandroid. There we can see this method called ```submitFlag```:
+
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/38a0f477-0632-4dac-9ec2-2080f4142a64)
+
+This method basically checks if the user input is equal to the decrypted value. If it is equal then it prints out the flag. 
+So here we need to use a tool called Frida to solve this challenge. Frida is a tool that is used to hook methods and manipulate the put put which is given by those methods.
+So now we need to setup Frida server and write Frida script.
+This is the Frida script which I have used:
+```javascript
+function intercept() {
+ // Check if frida has located the JNI
+  if (Java.available) {
+ // Switch to the Java context
+    Java.perform(function() {
+    const mydecrypt = Java.use('b3nac.injuredandroid.VGV4dEVuY3J5cHRpb25Ud28');
+    mydecrypt.decrypt.overload('java.lang.String').implementation = function (data) {
+      console.log('[+] decrypting data ' + data );
+      var flag = this.decrypt(data);
+      console.log('[+] decrypted data (flag) ' + flag);
+      return flag;
+    }
+    console.log('[+] VGV4dEVuY3J5cHRpb25Ud28.decrypt hooked - check a flag')
+  }
+  )}
+}
+intercept()
+```
