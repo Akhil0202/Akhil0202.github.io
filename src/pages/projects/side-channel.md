@@ -45,25 +45,7 @@ for _ in range(0, 5):
 
 Note: The range (0,5) is being used because I know the length of the password is 5. This code is part of much bigger code and I have added this here to just give an idea on how it can  be implemented. 
 
-## Differential Power Analysis
-
-In this method, we compare the power consumption which is being used by all the possible bits and then whichever bit uses the most power will be the secret key.
-For example, if the power consumed by F is 0.5, the power consumed by A is 0.4 and the power consumed by C is 0.41. From this, we can find that the power consumed by F is higher than anything else. So we conclude that F is the secret key. Now we need to repeat this procedure for the entire length of the secret key.
-```python
-for subkey in trange(0, 16, desc="Attacking Subkey"):
-    max_diffs = [0]*256
-    full_diffs = [0]*256
-    for guess in range(0, 256):
-        full_diff_trace = calculate_diffs(guess, subkey)
-        max_diffs[guess] = np.max(full_diff_trace)
-        full_diffs[guess] = full_diff_trace
-    sorted_args = np.argsort(max_diffs)[::-1]
-    key_guess.append(sorted_args[0])
-    print("Subkey %2d - most likely %02X (actual %02X)"%(subkey, key_guess[subkey], known_key[subkey]))
-
-Note: This is just a partial code of a much bigger code, I added it here to just show the way I did
-
-# Correlation Power Analysis
+## Correlation Power Analysis
 
 In this method, we use a correlation factor between X and Y where X is the bits that we guess and Y is the power consumption traces.
 For example, let's assume that 4th bit of the secret key is 5. Now for the 4th bit of the secret key we make an array of values which it can take, that is from 0 to F. This array is nothing but X and Y tells about how much power consumption is taken by each of them (0-F). Now using this array of X and Y it finds which bit in the X array has the most positive correlation factor with the value present in Y. In our example, as we assumed the 4th bit is 5, we will observe that 5 will have the most positive correlation factor as compared to any other from 0 to F.
@@ -82,5 +64,24 @@ maxcpa[kguess] = max(abs(cpaoutput))
 ```
 
 Note: This is just a partial code of a much bigger code, I added it here to just show the way I did, like by finding the mean, then finding the standard deviation then finding the correlation factor.
+
+## Differential Power Analysis
+
+In this method, we compare the power consumption which is being used by all the possible bits and then whichever bit uses the most power will be the secret key.
+For example, if the power consumed by F is 0.5, the power consumed by A is 0.4 and the power consumed by C is 0.41. From this, we can find that the power consumed by F is higher than anything else. So we conclude that F is the secret key. Now we need to repeat this procedure for the entire length of the secret key.
+```python
+for subkey in trange(0, 16, desc="Attacking Subkey"):
+    max_diffs = [0]*256
+    full_diffs = [0]*256
+    for guess in range(0, 256):
+        full_diff_trace = calculate_diffs(guess, subkey)
+        max_diffs[guess] = np.max(full_diff_trace)
+        full_diffs[guess] = full_diff_trace
+    sorted_args = np.argsort(max_diffs)[::-1]
+    key_guess.append(sorted_args[0])
+    print("Subkey %2d - most likely %02X (actual %02X)"%(subkey, key_guess[subkey], known_key[subkey]))
+
+Note: This is just a partial code of a much bigger code, I added it here to just show the way I did.
+
 
 
