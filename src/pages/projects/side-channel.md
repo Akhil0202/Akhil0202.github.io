@@ -49,7 +49,6 @@ Note: The range (0,5) is being used because I know the length of the password is
 
 In this method, we compare the power consumption which is being used by all the possible bits and then whichever bit uses the most power will be the secret key.
 For example, if the power consumed by F is 0.5, the power consumed by A is 0.4 and the power consumed by C is 0.41. From this, we can find that the power consumed by F is higher than anything else. So we conclude that F is the secret key. Now we need to repeat this procedure for the entire length of the secret key.
-
 ```python
 for subkey in trange(0, 16, desc="Attacking Subkey"):
     max_diffs = [0]*256
@@ -64,7 +63,7 @@ for subkey in trange(0, 16, desc="Attacking Subkey"):
 
 Note: This is just a partial code of a much bigger code, I added it here to just show the way I did
 
-## Correlation Power Analysis
+# Correlation Power Analysis
 
 In this method, we use a correlation factor between X and Y where X is the bits that we guess and Y is the power consumption traces.
 For example, let's assume that 4th bit of the secret key is 5. Now for the 4th bit of the secret key we make an array of values which it can take, that is from 0 to F. This array is nothing but X and Y tells about how much power consumption is taken by each of them (0-F). Now using this array of X and Y it finds which bit in the X array has the most positive correlation factor with the value present in Y. In our example, as we assumed the 4th bit is 5, we will observe that 5 will have the most positive correlation factor as compared to any other from 0 to F.
