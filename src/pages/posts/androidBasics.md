@@ -62,4 +62,21 @@ The four main components are as follows:
 
 ### 1) Activities
 
+Activity is nothing but a UI screen that can interact with the user. For example, let's consider an email application, when we open the app we see our inbox is one activity, composing a mail is another activity as it goes to a different screen similarly viewing one mail is another activity, and so on.
+Now each activity have their own activity life cycle.
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/af2286ad-2755-4647-a0f9-dc23e319d926)
+
+- **onCreate()** - This is the first callback and is called when the activity is first created.
+- **onStart()** - This callback is called when the activity becomes visible to the user.
+- **onResume()** - This is called when the user starts interacting with the application.
+- **onPause()** - The paused activity does not receive user input and cannot execute any code and is called when the current activity is being paused and the previous activity is being resumed.
+- **onStop()** - This callback is called when the activity is no longer visible.
+- **onDestroy()** - This callback is called before the system destroys the activity.
+- **onRestart()** - This callback is called when the activity restarts after stopping it.
+
+### 2) Services
+
+
+
+
 
