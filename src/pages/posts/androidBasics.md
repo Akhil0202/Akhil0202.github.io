@@ -4,7 +4,7 @@
 
 Android is made up of 5 layers
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/a70bd1ae-f55c-4be1-9d24-e441a06704a6/c5114091-3d95-4bd8-b063-725f1f3f01c2/Untitled.png)
+https://www.notion.so/Android-basics-a7ad5f93a311447fbef4803d3f8c20bc?pvs=4#577328c47493411dbbe740b1f2fdf4b6
 
 We begin each of these by starting from the bottom
 
