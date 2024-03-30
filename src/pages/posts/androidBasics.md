@@ -2,7 +2,7 @@
 layout: '@/templates/BasePost.astro'
 title: Android Basics
 description: This blog contains all the basic things related to Android including its architecture, application components etc.
-pubDate: 2024-03-25T00:00:00Z
+pubDate: 2023-10-25T00:00:00Z
 imgSrc: '/assets/images/androidBasics.png'
 imgAlt: 'InjuredAndroid'
 ---
