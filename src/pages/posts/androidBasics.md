@@ -57,6 +57,7 @@ The four main components are as follows:
 - **Services** - These are used to handle background processing associated with an application.
 - **Broadcast Receivers** - These are used for communicating between the Android OS and applications.
 - **Content Providers** - These are used for storage and database purposes.
+---
 
 ### 1) Activities
 
