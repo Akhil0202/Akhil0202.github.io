@@ -48,6 +48,8 @@ Some examples are:
 
 On this layer, we install our application. These are the applications that we use in our day-to-day lives. For example apps like camera, contacts and messages.
 
+---
+
 ## Application components
 
 These are the building blocks for an Android application. These components are mentioned in the AndroidManifest.xml file of that particular app. 
@@ -57,7 +59,6 @@ The four main components are as follows:
 - **Services** - These are used to handle background processing associated with an application.
 - **Broadcast Receivers** - These are used for communicating between the Android OS and applications.
 - **Content Providers** - These are used for storage and database purposes.
----
 
 ### 1) Activities
 
