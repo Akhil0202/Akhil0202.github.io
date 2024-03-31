@@ -66,6 +66,8 @@ Activity is nothing but a UI screen that can interact with the user. For example
 Now each activity have their own activity life cycle.
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/af2286ad-2755-4647-a0f9-dc23e319d926)
 
+Syntax: `public class activity extends Activity`
+
 - **onCreate()** - This is the first callback and is called when the activity is first created.
 - **onStart()** - This callback is called when the activity becomes visible to the user.
 - **onResume()** - This is called when the user starts interacting with the application.
@@ -76,7 +78,35 @@ Now each activity have their own activity life cycle.
 
 ### 2) Services
 
+Services is a component that runs in the background without the need for an interaction. For example take Spotify, even if we close the activity that runs the music, it still runs in the background and we can hear the music.
+Syntax: `public class service extends Service`
 
+There are mainly 2 types of services:
+
+- **Started** - A service is started when an application component, such as an activity, starts it by calling startService(). Once started, a service can run in the background indefinitely, even if the component that started it is destroyed.
+- **Bound** - A service is bound when an application component binds to it by calling bindService(). Bound is used to bind multiple components. It is also used for client-server interaction. Take Spotify for example, we can interact with it in the background. We can play, pause, stop, etc the music because all these are "bounded" together.
+
+### 3) Broadcast Receivers
+
+Broadcast receivers are used to simply respond to broadcast messages from other applications or from the system itself. We create a broadcast receiver by 
+implementing a subclass of BroadcastReceiver class and overriding the onReceive() method where each message is received as an Intent object parameter.
+```java
+public class MyReceiver extends BroadcastReceiver {
+   @Override
+   public void onReceive(Context context, Intent intent) {
+      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
+   }
+}
+```
+There are mainly 2 types of broadcast messages:
+
+- **System broadcast messages** - These are the broadcast messages which come from the system itself. For example when your battery level is too low(	
+android.intent.action.BATTERY_LOW), when calling someone(android.intent.action.CALL) etc.
+- **Custom broadcast messages** - These are used when you want your app itself to generate broadcast messages. We create a broadcast method and create an intent inside it. Then we can call sendBroadcast() and pass the intent as a parameter to it like this `sendBroadcast(intent)`.
+
+### 4) Content Providers
+
+Content providers are used for storing data. It can store data in files, databases, or even over a network.
 
 
 
