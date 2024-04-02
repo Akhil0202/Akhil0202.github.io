@@ -117,12 +117,12 @@ Content provider is very similar to a database hence it provides basic 6 methods
 - **getType()** - This method returns the MIME type of the data at the given URI.
 
 Content providers are accessed in URI, the format is: `<prefix>://<authority>/<data_type>/<id>`
-<Prefix> is always set to content.
-<authority> is the name of the content provider. Eg: contact, browser, etc
-<data_type> indicates the type of data that this particular provider provides.
-<id> specifies the specific record requested.
+Prefix is always set to content.<br>
+authority is the name of the content provider. Eg: contact, browser, etc.<br>
+data_type indicates the type of data that this particular provider provides.<br>
+id specifies the specific record requested.<br>
 
-We need to enclose our content provider in <provider> tag while adding it to our AndroidManifest.xml file
+We need to enclose our content provider in the provider tag while adding it to our AndroidManifest.xml file
 ```java
 <provider android:name="store"
          android:authorities="com.example.MyApplication.store"/>
