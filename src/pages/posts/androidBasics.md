@@ -107,6 +107,26 @@ android.intent.action.BATTERY_LOW), when calling someone(android.intent.action.C
 ### 4) Content Providers
 
 Content providers are used for storing data. It can store data in files, databases, or even over a network.
+Syntax: `public class store extends ContentProvider`.
+Content provider is very similar to a database hence it provides basic 6 methods:
+- **onCreate()** - This is used when the content provider is started.
+- **onQuery()** - This receives a query from the user.
+- **insert()** - This inserts new data into the content provider
+- **delete()** - This deletes the data from the content provider
+- **update()** - This method updates the existing data present in the content provider
+- **getType()** - This method returns the MIME type of the data at the given URI.
+
+Content providers are accessed in URI, the format is: `<prefix>://<authority>/<data_type>/<id>`
+<Prefix> is always set to content.
+<authority> is the name of the content provider. Eg: contact, browser, etc
+<data_type> indicates the type of data that this particular provider provides.
+<id> specifies the specific record requested.
+
+We need to enclose our content provider in <provider> tag while adding it to our AndroidManifest.xml file
+```java
+<provider android:name="store"
+         android:authorities="com.example.MyApplication.store"/>
+```
 
 
 
