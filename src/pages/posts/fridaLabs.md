@@ -34,4 +34,6 @@ I solved the challenge.
 
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/656db806-9e6a-4865-be16-db300b13470a)
 
+---
+## Level 2
 
