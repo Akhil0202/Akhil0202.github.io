@@ -47,3 +47,24 @@ And I have got the flag and challenge has been solved.
 ---
 ## Level 2
 
+Now in the 2nd challenge I saw this in JADX:
+
+![Screenshot from 2024-04-09 18-37-42](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/4b82f8e6-fd19-475f-a000-ced7d6daf2a6)
+
+So basically we need to hook this function and send 4919 as paramter and that will get us the flag. So this is my frida script
+
+```Javascript
+Java.perform(function(){
+
+    var a = Java.use("com.ad2001.frida0x2.MainActivity");
+    a.get_flag(4919);
+})
+```
+Now I run the cmd using `frida -U -f com.ad2001.frida0x2` & `%load chall02.js`
+
+The result is:
+![Screenshot from 2024-04-09 18-41-06](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/43f9fe21-2c47-4876-b310-eb3a566cf43b)
+
+---
+
+## Level 3
