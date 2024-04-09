@@ -85,4 +85,54 @@ Java.perform(function(){
 I ran this script using `frida -U -f com.ad2001.frida0x3` & `%load chall03.js`
 
 And I got the flag:
+
 ![Screenshot from 2024-04-09 18-57-55](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/fbe896a9-5077-46f7-8578-5b2c9dc0a013)
+
+--- 
+
+## Level 4
+
+![Screenshot from 2024-04-09 21-46-26](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/d7bb01de-8edd-47cf-8540-93f92faa58fd)
+
+```javascript
+Java.perform(function(){
+
+    var a = Java.use("com.ad2001.frida0x4.Check");
+    var b = a.$new();
+    var c = b.get_flag(1337);
+    console.log(c);
+
+})
+```
+
+![Screenshot from 2024-04-09 21-45-09](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/93e4a0fb-07f4-45cb-9977-7b0f3d3cd373)
+
+---
+
+## Level 5
+
+![Screenshot from 2024-04-09 22-08-56](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/6f48834c-8f06-4f40-b2ef-a1e4dc56dabe)
+
+```Javascript
+Java.perform(function () {
+    var a = Java.use('com.ad2001.frida0x5.MainActivity');
+    Java.choose('com.ad2001.frida0x5.MainActivity', {
+        onMatch: function(instance) {
+            console.log("Found instance: " + instance);
+            Java.scheduleOnMainThread(function() {
+                instance.flag(1337);
+            });
+        },
+        onComplete: function() {}
+    });
+});
+```
+
+And I got the flag:
+
+![Screenshot from 2024-04-09 22-09-47](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/660ca8bc-1b9c-45b0-89e2-7e5f4ef3f5c0)
+
+---
+
+## Level 6
+
