@@ -7,8 +7,8 @@ imgSrc: '/assets/images/frida.png'
 imgAlt: 'InjuredAndroid'
 ---
 
-Welcome to my walkthrough for frida labs. Here I have tried to explain you guys on how to solve challenges from frida labs apk so let's get started.<br>
-This is the link to GitHub repo if you guys want to solve it: https://github.com/DERE-ad2001/Frida-Labs.<br>
+Welcome to my walkthrough for frida labs. Here I have tried to explain you guys on how to solve challenges from Frida labs apk so let's get started.<br>
+This is the link to the GitHub repo if you guys want to solve it: https://github.com/DERE-ad2001/Frida-Labs.<br>
 PS: I am new to writing walkthroughs so forgive me if the explanations are not detailed enough
 
 ## Level 1
@@ -68,3 +68,21 @@ The result is:
 ---
 
 ## Level 3
+
+Opening the 3rd apk in JADX we can see that:
+
+![Screenshot from 2024-04-09 18-59-01](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/25ad3c8b-6b1f-4a4b-b5b6-277a8e043099)
+
+There is a Checker class and a variable called code and when the code's value is 512 it gives the flag. So I write my Frida script in such a way that the code's value is equal to 512. Here is my Frida script:
+
+```Javascript
+Java.perform(function(){
+
+    var a = Java.use("com.ad2001.frida0x3.Checker")
+    a.code.value = 512;
+})
+```
+I ran this script using `frida -U -f com.ad2001.frida0x3` & `%load chall03.js`
+
+And I got the flag:
+![Screenshot from 2024-04-09 18-57-55](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/fbe896a9-5077-46f7-8578-5b2c9dc0a013)
