@@ -35,7 +35,9 @@ Java.perform(function() {
     }
 })
 ```
-Now I run this frida script:
+Now here I am returning 1. So I need to give input as 6 after this operation: `(i*2)+4`
+
+Now I run this Frida script:
 `frida -l chall01.js -U -f com.ad2001.frida0x1`
 
 ![Screenshot from 2024-04-09 17-20-15](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/c0032d72-5dff-49ec-bfa3-e88b0f8bf21d)
