@@ -25,7 +25,7 @@ Now to solve this challenge if we know what is returned by `get_random` then we 
 
 So this is my Frida script:
 
-```javaScript
+```javascript
 Java.perform(function() {
 
     var a= Java.use("com.ad2001.frida0x1.MainActivity");
@@ -164,6 +164,7 @@ Java.perform(function() {
         }
     });
 });
+```
 
 And I got the flag:
 ![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/b2fd2209-1f5c-42b0-a680-71066714dc60)
