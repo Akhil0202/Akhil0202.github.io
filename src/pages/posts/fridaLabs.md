@@ -18,14 +18,14 @@ Opening the apk in JADX this is what I found
 ![Screenshot from 2024-04-09 17-11-55](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/a37c15ce-d628-4812-af4b-8a9b8cda7d51)
 ![Screenshot from 2024-04-09 17-13-04](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/9bd45c0c-5985-4522-9eb5-cb70f208cbdb)
 
-So basically there is  methid `get_random` which randomly generates a number between 0 to 100 then user inputs a number. There is a mathematical operation: `((i*2)+4 == i2)`
-Here i is the number returned by `get_random` and i2 is what user inputs.
+So basically there is method `get_random` which randomly generates a number between 0 to 100 then the user inputs a number. There is a mathematical operation: `((i*2)+4 == i2)`
+Here i is the number returned by `get_random` and i2 is what the user inputs.
 
 Now to solve this challenge if we know what is returned by `get_random` then we can find what we should input to the app.
 
-So this is my frida script:
+So this is my Frida script:
 
-```JavaScript
+```javaScript
 Java.perform(function() {
 
     var a= Java.use("com.ad2001.frida0x1.MainActivity");
@@ -53,7 +53,7 @@ Now in the 2nd challenge I saw this in JADX:
 
 So basically we need to hook this function and send 4919 as paramter and that will get us the flag. So this is my frida script
 
-```Javascript
+```javascript
 Java.perform(function(){
 
     var a = Java.use("com.ad2001.frida0x2.MainActivity");
@@ -75,7 +75,7 @@ Opening the 3rd apk in JADX we can see that:
 
 There is a Checker class and a variable called code and when the code's value is 512 it gives the flag. So I write my Frida script in such a way that the code's value is equal to 512. Here is my Frida script:
 
-```Javascript
+```javascript
 Java.perform(function(){
 
     var a = Java.use("com.ad2001.frida0x3.Checker")
@@ -113,7 +113,7 @@ Java.perform(function(){
 
 ![Screenshot from 2024-04-09 22-08-56](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/6f48834c-8f06-4f40-b2ef-a1e4dc56dabe)
 
-```Javascript
+```javascript
 Java.perform(function () {
     var a = Java.use('com.ad2001.frida0x5.MainActivity');
     Java.choose('com.ad2001.frida0x5.MainActivity', {
@@ -136,3 +136,38 @@ And I got the flag:
 
 ## Level 6
 
+In this challenge I opened it using JADX and inspected MainActivity and saw this:
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/b0a98850-c704-4453-abfc-e2bf8125ba5c)
+
+Here we can see a Checker class which is called in MainActivity. Now when I navigate to Checker class I saw this:
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/59c19555-017e-4915-a6a3-e45452c93cb9)
+
+This class has 2 integer value.
+
+Now to solve this challenge we need to create an instance for Checker class and set values of num1 and num2 as 1234 and 4321 respectively. Then we find a MainActivity function and once it is matched we call the Checker method. This is the code:
+
+```javascript
+Java.perform(function() {
+    var Checker = Java.use("com.ad2001.frida0x6.Checker");
+    var checker = Checker.$new();
+    checker.num1.value = 1234;
+    checker.num2.value = 4321;
+
+    var MainActivity = Java.use("com.ad2001.frida0x6.MainActivity");
+    Java.choose("com.ad2001.frida0x6.MainActivity", {
+        onMatch: function(instance) {
+            console.log("MainActivity instance found: " + instance);
+            instance.get_flag(checker);
+        },
+        onComplete: function() {
+            console.log("Search complete.");
+        }
+    });
+});
+
+And I got the flag:
+![image](https://github.com/Akhil0202/Akhil0202.github.io/assets/66013822/b2fd2209-1f5c-42b0-a680-71066714dc60)
+
+---
+
+## Level 7
