@@ -51,6 +51,22 @@ And then clicking on "go home" gave me the flag:
 <img width="343" alt="image" src="https://github.com/user-attachments/assets/7704d2bc-439b-40c4-8805-882880b88089" />
 
 Now coming to the next part the hint was saying we need to tamper with the input. Then I try to tamper around the textbox but nothing was happening.
-Other place where the input can be tampered is the URL, so now this was the URl: `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/1`, now after changing the number from 1 to 2, 2 to 3, so on when the input was 6 I got the flag `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/6`
+Other place where the input can be tampered is the URL, so now this was the URL: `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/1`, now after changing the number present in the URL from 1 to 2, 2 to 3, so on when the input was 6 I got the flag.
+
+<img width="479" alt="image" src="https://github.com/user-attachments/assets/e0c16b6d-c63b-4247-b1fe-3d850b04caee" />
+
+Now one more option is that we can tamper with the URL by adding special characters. Now I got the flag by adding ' at the end of URL
+
+<img width="470" alt="image" src="https://github.com/user-attachments/assets/21d763ac-3eb0-4ae1-8d22-8d235085898d" />
+
+
+
+
+
+
+
+
+
+
 
 
