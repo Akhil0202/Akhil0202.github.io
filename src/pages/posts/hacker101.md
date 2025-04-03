@@ -15,4 +15,15 @@ Hello everyone, here are my writeup for [Hacker101 CTF](https://ctf.hacker101.co
 
 ### A little something to get you started
 
+So this is the most simple challenge out of all. When goto the website we just see a simple screen.
+<img width="194" alt="image" src="https://github.com/user-attachments/assets/070efa2d-281a-41ee-b043-10a0dd59e06a" />
+
+
+
+---
+
+### Micro-CMS v1
+
+
+
 
