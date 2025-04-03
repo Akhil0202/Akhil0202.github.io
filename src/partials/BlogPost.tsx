@@ -12,7 +12,7 @@ type IBlogPostProps = {
 const BlogPost = (props: IBlogPostProps) => (
   <Section>
   <PostHeader content={props.frontmatter} author={AppConfig.author} />
-  <div className="max-w-4xl mx-auto">
+  <div className="max-w-4xl">
     <PostContent content={props.frontmatter}>
       {props.children}
     </PostContent>
