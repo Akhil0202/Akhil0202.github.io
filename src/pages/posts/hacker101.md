@@ -55,11 +55,12 @@ Other place where the input can be tampered is the URL, so now this was the URL:
 
 <img width="479" alt="image" src="https://github.com/user-attachments/assets/e0c16b6d-c63b-4247-b1fe-3d850b04caee" />
 
-Now one more option is that we can tamper with the URL by adding special characters. Now I got the flag by adding ' at the end of URL
+Now one more option is that we can tamper with the URL by adding special characters. Now I got the flag by adding ' at the end of URL.
+So sample URL will be like this: `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/4'`
 
 <img width="470" alt="image" src="https://github.com/user-attachments/assets/21d763ac-3eb0-4ae1-8d22-8d235085898d" />
 
-
+So now we got 3 flags out of 4 and last one is left. Now again coming back to the actual hint which is "Markdown is supported, but scripts are not". So I was thinking more towards Markdown XSS
 
 
 
