@@ -7,13 +7,13 @@ imgSrc: '/assets/images/image.png'
 imgAlt: 'Hacker101 CTF'
 ---
 
-## Hacker 101 writeup
+# Hacker 101 writeup
 
 Hello everyone, here are my writeup for [Hacker101 CTF](https://ctf.hacker101.com/ctf) hosted by Hackerone. Hopefully, I have explained it in a simple and well detailed manner.
 
 --- 
 
-### A little something to get you started
+## A little something to get you started
 
 So this is the most simple challenge out of all. When goto the website we just see a simple screen.
 
@@ -31,7 +31,7 @@ And voila I got the flag and submitted it.
 
 ---
 
-### Micro-CMS v1
+## Micro-CMS v1
 
 After going to website this is what is shown to us:
 
@@ -50,6 +50,7 @@ And then clicking on "go home" gave me the flag:
 
 <img width="343" alt="image" src="https://github.com/user-attachments/assets/7704d2bc-439b-40c4-8805-882880b88089" />
 
-
+Now coming to the next part the hint was saying we need to tamper with the input. Then I try to tamper around the textbox but nothing was happening.
+Other place where the input can be tampered is the URL, so now this was the URl: `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/1`, now after changing the number from 1 to 2, 2 to 3, so on when the input was 6 I got the flag `https://e549d3ba23b259134f2262ef4b8c17f6.ctf.hacker101.com/page/edit/6`
 
 
