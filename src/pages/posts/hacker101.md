@@ -33,6 +33,23 @@ And voila I got the flag and submitted it.
 
 ### Micro-CMS v1
 
+After going to website this is what is shown to us:
+
+<img width="293" alt="image" src="https://github.com/user-attachments/assets/d14cbd3c-ae2a-4e5c-88bc-0e54183926fa" />
+
+After that, I navigated to testing and I could see an option called "edit this page". After clicking on that I could enter my text in a textbox.
+
+<img width="545" alt="image" src="https://github.com/user-attachments/assets/799fc4d9-daf0-4744-a483-9ac7e30893cb" />
+
+My first intuition after seeing this was a XSS attack but its mentioned that "Markdown is supported, but scripts are not" hence `<script>alert(1)</script>` payload doesn't work.
+So I went ahead with `<img src="x" onerror=alert(1)>` and this was the result:
+
+<img width="1919" alt="image" src="https://github.com/user-attachments/assets/7e291489-75df-45f7-9d29-04b3fdb9bb12" />
+
+And then clicking on "go home" gave me the flag:
+
+<img width="343" alt="image" src="https://github.com/user-attachments/assets/7704d2bc-439b-40c4-8805-882880b88089" />
+
 
 
 
