@@ -19,7 +19,7 @@ The main why request smuggling attacks are possible is because HTTP/1 supports t
 - `Transfer-Encoding`: This specifies that the request uses "chunks" of data. How it works is that first the size of chunk is mentioned in hexadecimal, followed by the data and the full stop equivalent of chunk message is 0, so each chunk of data is always followed by 0 which specifies that chunk of data is done.
 
 Now the issue arises, what if a request has both CL and TE in the header? It works in such a way that if both CL and TE are present in then CL should be ignored. Now itseems like the issue is resolved but it isnt resolved yet. If two or more servers are in play then the issue still persists.
-- Some servers might support TE but can be induced not to process it if the header is obfuscated in some way.
+- Some servers might support TE but can be made to not process it if the header is obfuscated in some way.
 - Some servers do not support TE.
 
 Now there are mainly 3 types of scenarios for request smuggling to happen:
@@ -41,4 +41,13 @@ Transfer-Encoding: chunked
 
 SMUGGLED
 ```
+Now lets see what will happen when someone sends this request:
+- FE which uses CL to determine the end of request body, receives the request with CL 13, so the entire request which is sent to FE is sent to BE.
+- BE which uses TE to determine the end of request body, receives the request with TE as chunked and checks for 0 which will mark the end of the request body. It sees 0 and terminates the request.
+- Now the request which was sent by FE to BE is processed by BE till the 0, now the "SMUGGLED" part of the request is treated as a new request by BE because the previous request terminated when it recieved the 0. So the smuggled is treated as a new request by the BE.
+- So now if we send the request again, the sumggled part is added to that is sent.
+
+#### TE.CL
+
+
 
